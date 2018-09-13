@@ -1,0 +1,34 @@
+<%= errors %>
+<%= auth_token %>
+<label>Title:
+  <input type="text" name="album[title]" value="<%= @album.title %>">
+</label>
+<label>Year:
+  <input type="number" name="album[year]" value="<%= @album.year %>">
+</label>
+<label>
+  <input
+    type="radio"
+    name="album[studio]"
+    value="true"
+    <%= "checked" if @album.studio %>
+  > Studio
+</label>
+<label>
+  <input
+    type="radio"
+    name="album[studio]"
+    value="false"
+    <%= "checked" unless @album.studio %>
+  > Live
+</label>
+<label>Band:
+  <select name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option
+        value="<%= band.id %>"
+        <%= "selected" if @album.band == band %>
+      ><%= band.name %></option>
+    <% end %>
+  </select>
+</label>

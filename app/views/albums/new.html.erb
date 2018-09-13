@@ -1,0 +1,8 @@
+<h1>New album</h1>
+
+<form action="<%= albums_url %>" method="post">
+  <%= render 'form' %>
+  <input type="submit" value="Create album">
+</form>
+
+<a href="<%= band_url(@album.band) %>">Back</a>
