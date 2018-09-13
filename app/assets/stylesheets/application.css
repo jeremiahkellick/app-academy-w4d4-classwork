@@ -29,6 +29,10 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
   margin: 16px 0 0 0;
 }
 
+section {
+  margin: 16px 0 0 0;
+}
+
 .container {
   box-sizing: border-box;
   margin: -1px 15px 0 15px;
@@ -60,6 +64,14 @@ header.container {
   padding: 1px 1px 1px 1px;
 }
 
+header h1 a {
+  color: black;
+}
+
+header h1 a:hover {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 1246px) {
   header.container {
     margin: -1px auto -1px auto;
@@ -72,26 +84,23 @@ header h1 {
   margin: 0;
 }
 
-header aside form {
-  display: inline;
+a {
+  text-decoration: none;
 }
 
-header input[type="submit"], header a {
+input[type="submit"] {
+  font-size: 16px;
+  background: transparent;
   margin: 0;
+  padding: 0;
+  display: inline;
+  line-height: 1.48;
+  border: 0;
 }
 
 input[type="submit"], a {
-  font-size: 16px;
-  color: white;
-  background: black;
-  padding: 8px 10px;
-  border: 0;
-  border-radius: 8px;
+  color: #2d74da;
   cursor: pointer;
-  margin-top: 16px;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 1.48;
 }
 
 input[type="submit"]:hover, a:hover {
@@ -118,10 +127,10 @@ label {
   color: #e62325;
 }
 
-.inline-block {
-  display: inline-block;
+.inline {
+  display: inline;
 }
 
 input[type="submit"].red {
-  background: #e62325;
+  color: #e62325;
 }

@@ -13,23 +13,17 @@
   </head>
 
   <body>
-    <div class="green">
-      <header class="container">
-        <h1>Music App</h1>
-        <aside>
-          <% if logged_in? %>
-            <%= current_user.email %>
-            <form action="<%= session_url %>" method="post">
-              <%= auth_token %>
-              <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="Sign out">
-            </form>
-          <% else %>
-            <a href="<%= new_session_url %>">Sign in</a>
-          <% end %>
-        </aside>
-      </header>
-    </div>
+    <header class="container">
+      <h1><a href="<%= bands_url %>">Music App</a></h1>
+      <aside>
+        <% if logged_in? %>
+          <%= current_user.email %>
+          <%= delete_button name: "Sign out", red: false, action: session_url %>
+        <% else %>
+          <a href="<%= new_session_url %>">Sign in</a>
+        <% end %>
+      </aside>
+    </header>
     <main class="container">
       <%= yield %>
     </main>

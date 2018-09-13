@@ -3,7 +3,7 @@
 <form action="<%= band_url(@band) %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <%= render 'form', band: @band %>
-  <input type="submit" value="Save changes">
+  <p><input type="submit" value="Save changes"></p>
 </form>
 
 <a href="<%= bands_url %>">Back</a>

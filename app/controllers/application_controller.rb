@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  def index
+    redirect_to bands_url
+  end
+
   def current_user
     @current_user ||= User.find_by(session_token: session[:session_token])
   end

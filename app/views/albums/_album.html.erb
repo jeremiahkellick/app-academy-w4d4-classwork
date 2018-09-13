@@ -1,8 +1,6 @@
-<a href="<%= album_url(album) %>"><%= album.title %></a>
-<a href="<%= edit_album_url(album) %>">Edit</a>
-<form class="inline-block" action="<%= album_url(album) %>" method="post">
-  <%= auth_token %>
-  <input type="hidden" name="_method" value="delete">
-  <input class="red" type="submit" value="Delete">
-</form>
-<br>
+<li>
+  <a href="<%= album_url(album) %>"><%= album.title %></a> |
+  <a href="<%= edit_album_url(album) %>">Edit</a> |
+  <%= delete_button action: album_url(album) %>
+  <br>
+</li>

@@ -5,11 +5,7 @@
   Type: <%= @album.live? ? "Live" : "Studio" %>
 </p>
 <section>
-  <a href="<%= band_url(@album.band) %>">Back</a>
-  <a href="<%= edit_album_url(@album) %>">Edit</a>
-  <form class="inline-block" action="<%= album_url(@album) %>" method="post">
-    <%= auth_token %>
-    <input type="hidden" name="_method" value="delete">
-    <input class="red" type="submit" value="Delete album">
-  </form>
+  <a href="<%= band_url(@album.band) %>">Back</a> |
+  <a href="<%= edit_album_url(@album) %>">Edit</a> |
+  <%= delete_button name: "Delete album", action: album_url(@album) %>
 </section>

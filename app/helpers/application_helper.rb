@@ -18,4 +18,15 @@ module ApplicationHelper
     HTML
     auth_token_html.html_safe
   end
+
+  def delete_button(action:, name: "Delete", red: true)
+    delete_button_html = <<-HTML
+      <form class="inline" action="#{action}" method="post">
+        #{auth_token}
+        <input type="hidden" name="_method" value="delete">
+        <input #{red ? 'class="red"' : ''} type="submit" value="#{name}">
+      </form>
+    HTML
+    delete_button_html.html_safe
+  end
 end
