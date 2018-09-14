@@ -1,0 +1,19 @@
+<h1><%= @track.title %></h1>
+<p>
+  Album: <%= @track.album.title %><br>
+  Ord: <%= @track.ord %><br>
+  <%= "Bonus track" if @track.bonus? %>
+</p>
+<h2>Lyrics</h2>
+<p>
+  <%= @track.lyrics.split("\n").map { |line| h(line) }.join("<br>").html_safe %>
+</p>
+<% if @track.notes.count > 0 %>
+  <h2>Notes</h2>
+  <%= render @track.notes %>
+<% end %>
+<section>
+  <a href="<%= album_url(@track.album) %>">Back</a> |
+  <a href="<%= edit_track_url(@track) %>">Edit</a> |
+  <%= delete_button name: "Delete track", action: track_url(@track) %>
+</section>

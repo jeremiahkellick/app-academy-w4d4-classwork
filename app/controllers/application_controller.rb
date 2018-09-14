@@ -23,4 +23,10 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
     @current_user = nil
   end
+
+  protected
+
+  def must_be_logged_in
+    redirect_to new_session_url unless logged_in?
+  end
 end

@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  before_action :must_be_logged_in
+
   def new
     @album = Album.new(band: Band.find(params[:band_id]))
   end

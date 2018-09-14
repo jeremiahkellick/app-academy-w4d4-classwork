@@ -1,0 +1,37 @@
+<%= errors %>
+<%= auth_token %>
+<label>Title:
+  <input type="text" name="track[title]" value="<%= track.title %>">
+</label>
+<label>Album:
+  <select name="track[album_id]">
+    <% track.album.band.albums.each do |album| %>
+      <option
+        value="<%= album.id %>"
+        <%= "selected" if album == track.album %>
+      ><%= album.title %></option>
+    <% end %>
+  </select>
+</label>
+<label>Ord:
+  <input type="number" name="track[ord]" value="<%= track.ord %>">
+</label>
+<label>
+  <input
+    type="radio"
+    name="track[bonus]"
+    value="false"
+    <%= "checked" unless track.bonus %>
+  >Regular
+</label>
+<label>
+  <input
+    type="radio"
+    name="track[bonus]"
+    value="true"
+    <%= "checked" if track.bonus %>
+  >Bonus
+</label>
+<label>Lyrics:
+  <textarea name="track[lyrics]"><%= track.lyrics %></textarea>
+</label>

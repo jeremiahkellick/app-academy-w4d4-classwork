@@ -1,0 +1,9 @@
+<h1>Edit track</h1>
+
+<form action="<%= track_url(@track) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render 'form', track: @track %>
+  <p><input type="submit" value="Save changes"></p>
+</form>
+
+<a href="<%= album_url(@track.album) %>">Back</a>

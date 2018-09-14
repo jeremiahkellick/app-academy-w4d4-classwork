@@ -4,6 +4,9 @@
   Year: <%= @album.year %><br>
   Type: <%= @album.live? ? "Live" : "Studio" %>
 </p>
+<h2>Tracks</h2>
+<ul><%= render @album.tracks %></ul>
+<p><a href="<%= new_album_track_url(@album) %>">New track</a></p>
 <section>
   <a href="<%= band_url(@album.band) %>">Back</a> |
   <a href="<%= edit_album_url(@album) %>">Edit</a> |
