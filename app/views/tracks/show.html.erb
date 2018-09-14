@@ -6,12 +6,13 @@
 </p>
 <h2>Lyrics</h2>
 <p>
-  <%= @track.lyrics.split("\n").map { |line| h(line) }.join("<br>").html_safe %>
+  <%= ugly_lyrics(@track.lyrics) %>
 </p>
 <% if @track.notes.count > 0 %>
   <h2>Notes</h2>
   <%= render @track.notes %>
 <% end %>
+<%= render 'notes/form', track: @track %>
 <section>
   <a href="<%= album_url(@track.album) %>">Back</a> |
   <a href="<%= edit_track_url(@track) %>">Edit</a> |

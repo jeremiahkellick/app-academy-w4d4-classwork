@@ -1,2 +1,5 @@
 <h3><%= note.user.email %></h3>
 <p><%= note.body %></p>
+<% if note.user.id == current_user.id %>
+  <p><%= delete_button name: "Delete note", action: note_url(note) %></p>
+<% end %>
